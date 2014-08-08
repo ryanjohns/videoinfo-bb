@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'videoinfo-bb'
+require 'videoinfo/cli'
+
+trap('TERM') { puts ''; exit 1 }
+trap('INT')  { puts ''; exit 1 }
+
+ENV[Videoinfo::CLI::ENV_IMAGE_HOST] = 'BBImages'
+Videoinfo::CLI.run(ARGV)
